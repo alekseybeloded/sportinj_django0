@@ -1,0 +1,46 @@
+{
+    "python.testing.pytestEnabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "python.testing.pytestArgs": ["--no-cov"], // важная опция - обход бага с дебагом в тестах в vscode, надо coverage - стартуй ручками
+
+    "python.linting.flake8Enabled": false, // если ruff
+    "python.linting.pylintEnabled": false, // если ruff / flake8
+    "ruff.interpreter": [".venv/bin/python"], // шоб ruff юзался установленный в проекте
+
+    "python.linting.mypyEnabled": false,   // стандартный выключен
+    "mypy.dmypyExecutable": "${workspaceFolder}/.venv/bin/dmypy", // шоб dmypy юзался установленный в проекте
+    "mypy.targets": ["."],  // куда натравить dmypy
+
+    // линейка визуальная - у меня 99
+    "editor.rulers": [
+      99
+    ],
+
+    // те самые опции что исключают поиск / показ в файл дереве в рамках .venv папки и прочих - когда надо ставишь false
+    "search.exclude": {
+      ".idea": true,
+      "# add virtualenv to gitignore": true,
+      ".venv": true,
+      "# ignore python cache files": true,
+      "**/__pycache__": true,
+      ".mypy_cache": true,
+      ".pytest_cache": true,
+      ".mypy_cache/# Automatically created by mypy": true,
+      ".mypy_cache/*": true,
+      ".pytest_cache/# Created by pytest automatically.": true,
+      ".pytest_cache/*": true
+    },
+    "files.exclude": {
+      ".idea": true,
+      "# add virtualenv to gitignore": true,
+      ".venv": true,
+      "# ignore python cache files": true,
+      "**/__pycache__": true,
+      ".mypy_cache": true,
+      ".pytest_cache": true,
+      ".mypy_cache/# Automatically created by mypy": true,
+      ".mypy_cache/*": true,
+      ".pytest_cache/# Created by pytest automatically.": true,
+      ".pytest_cache/*": true
+    },
+}
